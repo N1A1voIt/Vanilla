@@ -109,8 +109,8 @@ export const translations = {
       processedTitle: 'Processed Vanilla',
       specsLabel: 'Specifications:',
       priceBySizeLabel: 'Price by size',
+      priceLabel: 'Price',
       perKgLabel: 'Per kg',
-
       tkNoirTitle: 'Grade A - TK Noir',
       tkNoirPrice: '75€ - 80€ / kg FOB',
       tkNoirPrice14: '75€ FOB',
@@ -341,6 +341,7 @@ export const translations = {
       processedTitle: 'Vanille Transformée',
       specsLabel: 'Spécificités :',
       priceBySizeLabel: 'Prix selon la taille',
+      priceLabel: 'Prix',
       perKgLabel: 'Par kg',
 
       tkNoirTitle: 'Grade A - TK Noir',
@@ -573,6 +574,7 @@ export const translations = {
       processedTitle: 'Lavanila Voahodina',
       specsLabel: 'Famaritana:',
       priceBySizeLabel: 'Vidiny araka ny habe',
+      priceLabel: 'Vidiny',
       perKgLabel: 'Isaky ny kg',
 
       tkNoirTitle: 'Grade A - TK Noir',

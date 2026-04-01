@@ -88,7 +88,7 @@ export function Products() {
     {
       title: t.products.powderTitle,
       specsLabel: t.products.specsLabel,
-      priceLabel: t.products.priceBySizeLabel,
+      priceLabel: t.products.priceLabel,
       priceTiers: [{ dimension: t.products.perKgLabel, price: t.products.powderPrice }],
       image: vanillaPowder,
       specs: [t.products.powderDesc],
@@ -96,7 +96,7 @@ export function Products() {
     {
       title: t.products.seedsTitle,
       specsLabel: t.products.specsLabel,
-      priceLabel: t.products.priceBySizeLabel,
+      priceLabel: t.products.priceLabel,
       priceTiers: [{ dimension: t.products.perKgLabel, price: t.products.seedsPrice }],
       image: beans,
       specs: [t.products.seedsDesc],
