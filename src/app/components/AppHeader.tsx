@@ -12,7 +12,7 @@ export function AppHeader() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-[#e8e4dc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3">
@@ -21,8 +21,9 @@ export function AppHeader() {
               alt="HRS Vanilla logo"
               className="h-10 w-10 object-contain"
             />
-            <div className="text-2xl font-serif text-amber-900">
-              HRS Vanilla
+            <div className="flex flex-col items-start">
+              <div className="text-xs tracking-widest uppercase text-[#6b6b6b]">Madagascar</div>
+              <div className="text-2xl font-serif italic text-[#2d2d2d] -mt-1">HRS Vanilla</div>
             </div>
           </Link>
 
@@ -31,10 +32,10 @@ export function AppHeader() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`transition-colors ${
+                className={`transition-all duration-200 text-sm ${
                   isActive(link.path)
-                    ? 'text-amber-900 font-medium'
-                    : 'text-neutral-600 hover:text-amber-900'
+                    ? 'text-[#2d2d2d] font-semibold'
+                    : 'text-[#6b6b6b] hover:text-[#2d2d2d]'
                 }`}
               >
                 {link.label}
@@ -45,7 +46,7 @@ export function AppHeader() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-neutral-600 hover:text-amber-900"
+            className="lg:hidden p-2 text-[#6b6b6b] hover:text-[#2d2d2d]"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -53,23 +54,23 @@ export function AppHeader() {
       </div>
 
       {mobileMenuOpen && (
-        <nav className="lg:hidden bg-white border-t border-neutral-200">
+        <nav className="lg:hidden bg-white border-t border-[#e8e4dc]">
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block py-2 transition-colors ${
+                className={`block py-2 transition-colors text-sm ${
                   isActive(link.path)
-                    ? 'text-amber-900 font-medium'
-                    : 'text-neutral-600'
+                    ? 'text-[#2d2d2d] font-semibold'
+                    : 'text-[#6b6b6b]'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-3 border-t border-neutral-200">
+            <div className="pt-3 border-t border-[#e8e4dc]">
               <LanguageSwitcher />
             </div>
           </div>

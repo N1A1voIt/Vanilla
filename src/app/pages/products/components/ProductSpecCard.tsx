@@ -18,7 +18,8 @@ export function ProductSpecCard({ title, specsLabel, specs, image, priceLabel, p
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -8 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral-100 hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
+      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      className="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col h-full"
     >
       {/* Image Section */}
       <div className="relative h-64 overflow-hidden">
@@ -27,28 +28,28 @@ export function ProductSpecCard({ title, specsLabel, specs, image, priceLabel, p
           alt={title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2d2d2d]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       {/* Content Section */}
       <div className="p-8 flex-grow">
-        <h3 className="text-2xl md:text-3xl font-serif text-neutral-900 mb-4 group-hover:text-amber-900 transition-colors duration-300">
+        <h3 className="text-2xl md:text-3xl font-serif italic text-[#2d2d2d] mb-4 group-hover:text-[#1a1a1a] transition-colors duration-300 tracking-tight">
           {title}
         </h3>
 
         {priceTiers && priceTiers.length > 0 && (
-          <div className="mb-6 rounded-xl border border-amber-200/70 bg-amber-50/60 p-4">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-amber-800 mb-3">
+          <div className="mb-6 bg-[#f5f1e8] p-4">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#6b6b6b] mb-3">
               {priceLabel}
             </p>
             <div className="space-y-2">
               {priceTiers.map((tier) => (
                 <div
                   key={`${tier.dimension}-${tier.price}`}
-                  className="flex items-center justify-between gap-4 rounded-lg bg-white/80 border border-amber-100 px-3 py-2"
+                  className="flex items-center justify-between gap-4 bg-white px-3 py-2"
                 >
-                  <span className="text-sm font-medium text-neutral-700">{tier.dimension}</span>
-                  <span className="text-sm font-semibold text-amber-900">{tier.price}</span>
+                  <span className="text-sm font-medium text-[#6b6b6b]">{tier.dimension}</span>
+                  <span className="text-sm font-bold text-[#2d2d2d]">{tier.price}</span>
                 </div>
               ))}
             </div>
@@ -57,8 +58,8 @@ export function ProductSpecCard({ title, specsLabel, specs, image, priceLabel, p
 
         <div className="space-y-6">
           <div className="flex items-center space-x-2">
-            <span className="h-px w-8 bg-amber-600/30" />
-            <p className="font-medium text-amber-800 tracking-widest uppercase text-xs">
+            <span className="h-px w-8 bg-[#c9a86f]" />
+            <p className="font-semibold text-[#6b6b6b] tracking-widest uppercase text-[10px]">
               {specsLabel}
             </p>
           </div>
@@ -70,12 +71,12 @@ export function ProductSpecCard({ title, specsLabel, specs, image, priceLabel, p
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start text-neutral-600"
+                className="flex items-start text-[#6b6b6b]"
               >
-                <div className="mt-1 mr-3 bg-amber-50 rounded-full p-1 group-hover:bg-amber-100 transition-colors duration-300">
-                  <Check className="text-amber-700 flex-shrink-0" size={14} />
+                <div className="mt-1 mr-3 bg-[#f5f1e8] rounded-full p-1 group-hover:bg-[#e8e4dc] transition-colors duration-300">
+                  <Check className="text-[#c9a86f] flex-shrink-0" size={14} strokeWidth={2.5} />
                 </div>
-                <span className="leading-relaxed text-sm md:text-base">{spec}</span>
+                <span className="leading-relaxed text-sm">{spec}</span>
               </motion.li>
             ))}
           </ul>
